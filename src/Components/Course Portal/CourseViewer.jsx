@@ -111,7 +111,7 @@ function CourseCard({ course }) {
 					</div>
 
 					<div className='flex items-center text-gray-500 text-sm first-letter:border-t-2 border-solid'>
-						{/* continuing here next time */}
+						{/* continuing here tomorrow */}
 						<div className='flex gap-1'>
 							<img
 								src='/Icons/book.png'
