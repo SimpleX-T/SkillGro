@@ -3,7 +3,7 @@ import NavItem from "./NavItem";
 
 function NavBar() {
 	return (
-		<nav>
+		<nav className='md:flex items-center hidden'>
 			<ul className='flex space-x-6 items-center'>
 				<NavItem title='home' />
 				<NavItem

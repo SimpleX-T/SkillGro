@@ -68,9 +68,9 @@ export function Tag({
 function LandingPage() {
 	return (
 		<>
-			<section className='flex items-center relative justify-between w-5/6 mx-auto bg-fixed gap-10 bg-hero-bg bg-no-repeat bg-left my-12'>
-				<div className='w-1/2 p-4'>
-					<h3 className='text-[44px] font-semibold text-[#161439] select-none'>
+			<section className='flex flex-col md:flex-row items-center relative justify-between md:w-5/6 w-full px-4 md:p-0 mx-auto bg-fixed gap-10 bg-hero-bg bg-no-repeat bg-left my-12'>
+				<div className='w-full p-1 md:w-1/2 md:p-4'>
+					<h3 className='text-xl md:text-4xl font-semibold text-[#161439] select-none'>
 						Learning is
 						<span className='text-white bg-text-svg px-1 bg-no-repeat bg-cover bg-center mx-2'>
 							what you
@@ -79,11 +79,11 @@ function LandingPage() {
 						Make of it. Make it Yours at SkillGro.
 					</h3>
 					<div className='flex items-center h-8 mt-8 gap-12'>
-						<button className='bg-[#5751E1] text-white font-bold py-3 px-5 rounded-full transition-colors duration-300 drop-shadow-custom hover:bg-[#050071] active:drop-shadow-none active:bg-[#161439] active:text-[#f7eef9] flex items-center gap-2'>
+						<button className='bg-[#5751E1] text-white md:font-bold py-1 px-3 md:py-3 md:px-5 rounded-full transition-colors duration-300 drop-shadow-custom hover:bg-[#050071] active:drop-shadow-none active:bg-[#161439] active:text-[#f7eef9] flex items-center gap-2'>
 							<span>Start Free Trial</span>
 							<ArrowRightIcon width={20} />
 						</button>
-						<button className='rounded-full flex items-center justify-center border border-[#161439] p-[14px] bg-[#FFC224] text-[#161439] font-bold drop-shadow-custom active:drop-shadow-none active:text-[#f7eef9]'>
+						<button className='rounded-full flex items-center justify-center border border-[#161439] p-2 md:p-[14px] bg-[#FFC224] text-[#161439] font-bold drop-shadow-custom active:drop-shadow-none active:text-[#f7eef9]'>
 							<PlayIcon width={20} />
 						</button>
 					</div>
@@ -91,46 +91,106 @@ function LandingPage() {
 				<div className='w-1/2'>
 					<img
 						src='/heroImg_1.png'
-						className='w-full select-none'
+						className='w-full hidden md:block select-none'
 						alt='Hero Image'
 					/>
 				</div>
 			</section>
 
 			<section className='slanted-bg relative bg-white mx-auto'>
-				<div className='carousel w-[120%] -ml-3 h-16 overflow-hidden flex items-center origin-top-left transform -rotate-[6deg] bg-[#06042E] '>
-					<div className='slide flex items-center gap-32 w-full'>
-						<img src='/brands/udemy.png' alt='Udemy' />
-						<img src='/brands/codecademy.png' alt='Codecademy' />
-						<img src='/brands/amd.png' alt='AMD' />
-						<img src='/brands/amazon.png' alt='Amazon' />
-						<img src='/brands/coursera.png' alt='Coursera' />
-						<img src='/brands/udemy.png' alt='Udemy' />
-						<img src='/brands/codecademy.png' alt='Codecademy' />
-						<img src='/brands/amd.png' alt='AMD' />
-						<img src='/brands/amazon.png' alt='Amazon' />
-						<img src='/brands/coursera.png' alt='Coursera' />
-						<img src='/brands/udemy.png' alt='Udemy' />
-						<img src='/brands/codecademy.png' alt='Codecademy' />
-						<img src='/brands/amd.png' alt='AMD' />
-						<img src='/brands/amazon.png' alt='Amazon' />
-						<img src='/brands/coursera.png' alt='Coursera' />
+				<div className='carousel w-[120%] -ml-3 h-8 md:h-16 overflow-hidden flex items-center origin-top-left transform -rotate-[6deg] bg-[#06042E] '>
+					<div className='slide flex items-center gap-12 md:gap-32 w-full'>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/udemy.png'
+							alt='Udemy'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/codecademy.png'
+							alt='Codecademy'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/amd.png'
+							alt='AMD'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/amazon.png'
+							alt='Amazon'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/coursera.png'
+							alt='Coursera'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/udemy.png'
+							alt='Udemy'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/codecademy.png'
+							alt='Codecademy'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/amd.png'
+							alt='AMD'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/amazon.png'
+							alt='Amazon'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/coursera.png'
+							alt='Coursera'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/udemy.png'
+							alt='Udemy'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/codecademy.png'
+							alt='Codecademy'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/amd.png'
+							alt='AMD'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/amazon.png'
+							alt='Amazon'
+						/>
+						<img
+							className='w-16 md:w-full'
+							src='/brands/coursera.png'
+							alt='Coursera'
+						/>
 					</div>
 				</div>
 
-				<div className='w-5/6 mx-auto py-4'>
+				<div className='w-full md:w-5/6 mx-auto py-4'>
 					<section className='w-2/4 mx-auto text-center my-6'>
 						<Tag text='Our Top Features' />
 						<h2 className='text-[#161439] text-2xl font-bold my-3'>
 							Achieve Your Goal With SkillGrow
 						</h2>
-						<span className='text-xs text-[#6D6C80] w-[60ch] inline-block text-center'>
+						<span className='text-xs text-[#6D6C80]  md:w-[60ch] inline-block text-center'>
 							when an unknown printer took a galley of type and
 							scrambled make specimen book has survived not only
 							five centuries
 						</span>
 					</section>
-					<section className='flex items-center gap-8 w-5/6 mx-auto mt-6'>
+					<section className='flex flex-col md:flex-row items-center gap-8 w-5/6 mx-auto mt-6'>
 						<AboutCard
 							iconColor='1BCBE3'
 							backgroundColor='F1FDFF'
@@ -157,15 +217,16 @@ function LandingPage() {
 						/>
 					</section>
 
-					<section className='flex items-center gap-4 mt-12 w-5/6 mx-auto'>
-						<div className='w-1/2'>
+					<section className='flex flex-col md:flex-row items-center gap-4 mt-12 px-4 md:p-0 w-full md:w-5/6 mx-auto'>
+						<div className='w-1/2 hidden md:block'>
 							<img
 								width={400}
 								src='/heroImg_2.png'
 								alt='Man Smiling with books in hand'
 							/>
 						</div>
-						<div className='w-1/2'>
+
+						<div className='w-full md:w-1/2'>
 							<Tag text='get more about us' />
 							<h2 className='text-[#161439] text-2xl font-bold my-3 capitalize'>
 								thousand of{" "}
@@ -175,7 +236,7 @@ function LandingPage() {
 								<br />
 								now in one place
 							</h2>
-							<p className='text-xs w-[60ch] leading-loose mb-4'>
+							<p className='text-xs md:w-[60ch] leading-loose mb-4'>
 								Groove’s intuitive shared inbox makes it easy
 								for team members to organize, prioritize and.In
 								this episode of the Smashing Pod we’re talking
@@ -207,7 +268,7 @@ function LandingPage() {
 									flexible course plan
 								</li>
 							</ul>
-							<button className='bg-[#5751E1] text-white font-bold py-3 px-5 rounded-full transition-colors duration-300 drop-shadow-custom hover:bg-[#050071] active:drop-shadow-none active:bg-[#161439] active:text-[#f7eef9] flex items-center gap-2'>
+							<button className='bg-[#5751E1] text-white md:font-bold md:py-3 md:px-5 px-3 py-1 rounded-full transition-colors duration-300 drop-shadow-custom hover:bg-[#050071] active:drop-shadow-none active:bg-[#161439] active:text-[#f7eef9] flex items-center gap-2'>
 								<span>Start Free Trial</span>
 								<ArrowRightIcon width={20} />
 							</button>
@@ -217,12 +278,12 @@ function LandingPage() {
 			</section>
 
 			<section className='pt-12'>
-				<section className='w-2/4 mx-auto text-center my-6'>
+				<section className='md:w-2/4 mx-auto px-2 text-center my-6'>
 					<Tag text='top class courses' />
 					<h2 className='text-[#161439] text-2xl font-bold my-3'>
 						Explore Our World's Best Courses
 					</h2>
-					<span className='text-xs text-[#6D6C80] w-[60ch] inline-block text-center'>
+					<span className='text-xs text-[#6D6C80] md:w-[60ch] md:inline-block text-center'>
 						When known printer took a galley of type scrambl edmake
 					</span>
 				</section>

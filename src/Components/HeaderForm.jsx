@@ -3,7 +3,7 @@ import { PaperAirplaneIcon } from "@heroicons/react/16/solid";
 
 function HeaderForm() {
 	return (
-		<form className='flex relative items-center p-[6px] rounded-3xl border border-solid border-[#D3D2DF]'>
+		<form className='hidden md:flex relative items-center p-[6px] rounded-3xl border border-solid border-[#D3D2DF]'>
 			<Select />
 			<input
 				type='search'

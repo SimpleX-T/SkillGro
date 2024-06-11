@@ -65,7 +65,7 @@ const courses = [
 function CourseCard({ course }) {
 	return (
 		<>
-			<div className='w-[25%] rounded-lg bg-white overflow-hidden border-2 border-solid'>
+			<div className='w-full md:w-[25%] rounded-lg bg-white overflow-hidden border-2 border-solid'>
 				<div className='px-6 py-4 flex items-center rounded-lg overflow-hidden'>
 					<img
 						src={course.imgUrl}
@@ -164,7 +164,7 @@ function CourseView({ name }) {
 
 	return (
 		<div name={name}>
-			<div className='w-5/6 mx-auto flex items-center gap-6'>
+			<div className='w-full md:w-5/6 mx-auto px-4 md:p-0 flex flex-col md:flex-row items-center gap-6'>
 				{curCourses.map((course) => (
 					<CourseCard course={course} key={course.id} />
 				))}
@@ -182,17 +182,29 @@ function CourseViewer() {
 
 	return (
 		<section>
-			<ul className='flex items-center gap-12 w-1/2 mb-12 p-2 justify-center mx-auto border-[#D9D9F3] border-b-2 border-solid'>
-				<p onClick={() => handleClick(e)} opens='allCourses'>
+			<ul className='flex items-center gap-2 md:gap-12 w-full md:w-1/2 mb-12 p-4 md:p-2 justify-center mx-auto border-[#D9D9F3] border-b-2 border-solid'>
+				<p
+					className='text-sm md:text-lg'
+					onClick={() => handleClick(e)}
+					opens='allCourses'>
 					All courses
 				</p>
-				<p onClick={() => handleClick(e)} opens='design'>
+				<p
+					className='text-sm md:text-lg'
+					onClick={() => handleClick(e)}
+					opens='design'>
 					Design
 				</p>
-				<p onClick={() => handleClick(e)} opens='business'>
+				<p
+					className='text-sm md:text-lg'
+					onClick={() => handleClick(e)}
+					opens='business'>
 					Business
 				</p>
-				<p onClick={() => handleClick(e)} opens='development'>
+				<p
+					className='text-sm md:text-lg'
+					onClick={() => handleClick(e)}
+					opens='development'>
 					Development
 				</p>
 			</ul>
