@@ -1,6 +1,10 @@
 import { AcademicCapIcon, ArrowRightIcon } from "@heroicons/react/16/solid";
 import { PlayIcon } from "@heroicons/react/16/solid";
-import { BookOpenIcon, SparklesIcon } from "@heroicons/react/24/outline";
+import {
+	BookOpenIcon,
+	PresentationChartLineIcon,
+	SparklesIcon,
+} from "@heroicons/react/24/outline";
 import CourseViewer from "../../UI/CourseViewer";
 import Button from "../../UI/Button";
 
@@ -291,8 +295,41 @@ function LandingPage() {
 				</section>
 
 				<CourseViewer />
-				<div className='mx-auto w-1/2 my-6 text-center'>
+				<div className='mx-auto w-1/2 my-12 text-center'>
 					<Button to='courses'>View all Courses</Button>
+				</div>
+			</section>
+
+			<section className='bg-white mx-auto px-4 pt-12'>
+				<div className='w-full flex flex-col sm:flex-row md:w-5/6 text-center'>
+					<img
+						src='/about_img.png'
+						alt='Boy and girl reading'
+						className='hidden sm:block'
+					/>
+					<div>
+						<Tag text='Free Workshop' />
+						<h2 className='text-[#161439] text-2xl font-bold my-3'>
+							Join Our Free Workshops
+						</h2>
+						<p className='text-xs text-[#6D6C80] md:w-[60ch] text-center'>
+							Edhen an unknown printer took a galley of type and
+							scrambled it to make a type specimen bookas survived
+							not only five centuries.Edhen an unknown printer
+							took a galley of type and scrambled.
+						</p>
+						<div className='flex gap-4'>
+							<div className='flex items-center gap-4'>
+								<div>
+									<PresentationChartLineIcon
+										className='rounded-full p-6 bg-red-500'
+										width={20}
+										color='white'
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</>
