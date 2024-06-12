@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { formatCurrency } from "../../utils/helpers";
+import { convertSecondsToTime, formatCurrency } from "../../utils/helpers";
 import { Tag } from "../../Pages/Home/LandingPage";
 import { StarIcon } from "@heroicons/react/16/solid";
+import { AcademicCapIcon, ClockIcon } from "@heroicons/react/24/outline";
 
 const courses = [
 	{
@@ -65,7 +66,7 @@ const courses = [
 function CourseCard({ course }) {
 	return (
 		<>
-			<div className='w-full md:w-[25%] rounded-lg bg-white overflow-hidden border-2 border-solid'>
+			<div className='mx-auto w-4/5 md:max-w-72 rounded-lg bg-white overflow-hidden border-2 border-solid'>
 				<div className='px-6 py-4 flex items-center rounded-lg overflow-hidden'>
 					<img
 						src={course.imgUrl}
@@ -93,26 +94,26 @@ function CourseCard({ course }) {
 						{course?.title}
 					</h3>
 
-					<div className='flex items-center mb-4'>
+					<div className='flex items-center mb-4 justify-between'>
 						<img
 							className='w-8 h-8 rounded-full mr-2 object-cover'
 							src={course.tutorImg}
 							alt={course.tutorTitle}
 						/>
-						<span className='text-sm text-[#6D6C80] capitalize mr-auto'>
-							{course.tutorTitle}
+						<span className='text-xs md:text-sm text-[#6D6C80] capitalize mr-auto'>
+							{course.tutorTitle.split(" ")[0]}
 						</span>
 						<div className='ml-2 flex items-center'>
-							<StarIcon className='w-5 h-5 inline-block text-yellow-500' />
-							<span className='text-xs text-[#7F7E97]'>
+							<StarIcon className='w-4 h-4 inline-block text-yellow-500' />
+							<span className='text-xs md:text-sm text-[#7F7E97]'>
 								({course.reviews} Reviews)
 							</span>
 						</div>
 					</div>
 
-					<div className='flex items-center text-gray-500 text-sm first-letter:border-t-2 border-solid'>
+					<div className='flex items-center justify-between text-gray-500 text-sm first-letter:border-t-2 border-solid'>
 						{/* continuing here tomorrow */}
-						<div className='flex gap-1'>
+						<div className='flex gap-1 items-center'>
 							<img
 								src='/Icons/book.png'
 								alt=''
@@ -124,34 +125,14 @@ function CourseCard({ course }) {
 									: `0${course.numWatched}`}
 							</span>
 						</div>
-						<svg
-							className='w-4 h-4 mx-2'
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
-							/>
-						</svg>
-						<span>11h 20m</span>
-						<svg
-							className='w-4 h-4 mx-2'
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4'
-							/>
-						</svg>
-						<span>22</span>
+						<div className='flex gap-1 items-center'>
+							<ClockIcon width={16} />
+							<span>{convertSecondsToTime(course.duration)}</span>
+						</div>
+						<div className='flex gap-1 items-center'>
+							<AcademicCapIcon width={16} />
+							<span>{course.numCompleted}</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -159,56 +140,83 @@ function CourseCard({ course }) {
 	);
 }
 
-function CourseView({ name }) {
-	const [curCourses, setCurCourses] = useState(courses);
-
+function CourseView({ courses }) {
 	return (
-		<div name={name}>
-			<div className='w-full md:w-5/6 mx-auto px-4 md:p-0 flex flex-col md:flex-row items-center gap-6'>
-				{curCourses.map((course) => (
-					<CourseCard course={course} key={course.id} />
-				))}
+		<div>
+			<div className='w-full md:w-5/6 mx-auto px-4 md:p-0 flex flex-wrap flex-row items-center gap-6'>
+				{courses.length > 0 ? (
+					courses.map((course) => (
+						<CourseCard course={course} key={course.id} />
+					))
+				) : (
+					<p className='text-sm mx-auto'>
+						No courses with that tag for the moment, please come
+						back later
+					</p>
+				)}
 			</div>
 		</div>
 	);
 }
 
-function CourseViewer() {
-	const [activeState, setActiveState] = useState("allCourses");
+function CourseLink({ opens, onclick, text, selectedCourse }) {
+	return (
+		<p
+			className={`text-xs md:text-lg cursor-pointer pb-2 text-gray-500 ${
+				opens === selectedCourse
+					? "border-b-4 border-solid border-[#5751E1] text-black"
+					: ""
+			}`}
+			onClick={() => onclick(opens)}
+			opens={opens}>
+			{text}
+		</p>
+	);
+}
 
-	function handleClick(e) {
-		setActiveState(e.target.getAttribute("for"));
+function CourseViewer() {
+	const [selectedCourse, setSelectedCourse] = useState("allCourses");
+	const [filteredCourses, setFilteredCourses] = useState(courses);
+
+	function handleSetFilteredCourses(tag) {
+		if (tag === "allCourses") setFilteredCourses(courses);
+		else setFilteredCourses(courses.filter((course) => course.tag === tag));
+	}
+
+	function handleClick(val) {
+		handleSetFilteredCourses(val);
+		setSelectedCourse(val);
 	}
 
 	return (
 		<section>
-			<ul className='flex items-center gap-2 md:gap-12 w-full md:w-1/2 mb-12 p-4 md:p-2 justify-center mx-auto border-[#D9D9F3] border-b-2 border-solid'>
-				<p
-					className='text-sm md:text-lg'
-					onClick={() => handleClick(e)}
-					opens='allCourses'>
-					All courses
-				</p>
-				<p
-					className='text-sm md:text-lg'
-					onClick={() => handleClick(e)}
-					opens='design'>
-					Design
-				</p>
-				<p
-					className='text-sm md:text-lg'
-					onClick={() => handleClick(e)}
-					opens='business'>
-					Business
-				</p>
-				<p
-					className='text-sm md:text-lg'
-					onClick={() => handleClick(e)}
-					opens='development'>
-					Development
-				</p>
+			<ul className='flex items-center gap-6 px-4 md:gap-12 w-full md:w-1/2 mb-12 justify-center mx-auto border-[#D9D9F3] border-b-2 border-solid'>
+				<CourseLink
+					opens='allCourses'
+					text='All Courses'
+					onclick={handleClick}
+					selectedCourse={selectedCourse}
+				/>
+				<CourseLink
+					opens='design'
+					text='Design'
+					onclick={handleClick}
+					selectedCourse={selectedCourse}
+				/>
+				<CourseLink
+					opens='business'
+					text='Business'
+					onclick={handleClick}
+					selectedCourse={selectedCourse}
+				/>
+				<CourseLink
+					opens='development'
+					text='Development'
+					onclick={handleClick}
+					selectedCourse={selectedCourse}
+				/>
 			</ul>
-			<CourseView />
+			<CourseView courses={filteredCourses} />
 		</section>
 	);
 }

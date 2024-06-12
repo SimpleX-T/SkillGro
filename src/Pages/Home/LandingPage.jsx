@@ -226,7 +226,7 @@ function LandingPage() {
 							/>
 						</div>
 
-						<div className='w-full md:w-1/2'>
+						<div className='w-full mx-auto px-4 md:w-1/2'>
 							<Tag text='get more about us' />
 							<h2 className='text-[#161439] text-2xl font-bold my-3 capitalize'>
 								thousand of{" "}
