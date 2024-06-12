@@ -1,7 +1,8 @@
 import { AcademicCapIcon, ArrowRightIcon } from "@heroicons/react/16/solid";
 import { PlayIcon } from "@heroicons/react/16/solid";
 import { BookOpenIcon, SparklesIcon } from "@heroicons/react/24/outline";
-import CourseViewer from "../../Components/Course Portal/CourseViewer";
+import CourseViewer from "../../UI/CourseViewer";
+import Button from "../../UI/Button";
 
 function AboutCard({
 	text,
@@ -79,10 +80,11 @@ function LandingPage() {
 						Make of it. Make it Yours at SkillGro.
 					</h3>
 					<div className='flex items-center h-8 mt-8 gap-12'>
-						<button className='bg-[#5751E1] text-white md:font-bold py-1 px-3 md:py-3 md:px-5 rounded-full transition-colors duration-300 drop-shadow-custom hover:bg-[#050071] active:drop-shadow-none active:bg-[#161439] active:text-[#f7eef9] flex items-center gap-2'>
+						<Button>
 							<span>Start Free Trial</span>
 							<ArrowRightIcon width={20} />
-						</button>
+						</Button>
+
 						<button className='rounded-full flex items-center justify-center border border-[#161439] p-2 md:p-[14px] bg-[#FFC224] text-[#161439] font-bold drop-shadow-custom active:drop-shadow-none active:text-[#f7eef9]'>
 							<PlayIcon width={20} />
 						</button>
@@ -289,6 +291,9 @@ function LandingPage() {
 				</section>
 
 				<CourseViewer />
+				<div className='mx-auto w-1/2 my-6 text-center'>
+					<Button to='courses'>View all Courses</Button>
+				</div>
 			</section>
 		</>
 	);

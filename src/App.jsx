@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AppLayout from "./Components/AppLayout";
+import AppLayout from "./UI/AppLayout";
 import Courses from "./Pages/Course/Courses";
 import LandingPage from "./Pages/Home/LandingPage";
 import CourseDetail from "./Pages/Course/CourseDetail";
