@@ -313,10 +313,10 @@ function LandingPage() {
 							Join Our Free Workshops
 						</h2>
 						<p className='text-xs text-[#6D6C80] md:w-[60ch] text-center'>
-							Edhen an unknown printer took a galley of type and
-							scrambled it to make a type specimen bookas survived
-							not only five centuries.Edhen an unknown printer
-							took a galley of type and scrambled.
+							An unknown printer took a gallery of type and
+							scrambled it to make a type specimen books survived
+							not only five centuries. An unknown printer took a
+							gallery of type and scrambled.
 						</p>
 						<div className='flex gap-4'>
 							<div className='flex items-center gap-4'>
