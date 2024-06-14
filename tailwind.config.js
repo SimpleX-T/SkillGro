@@ -10,6 +10,10 @@ export default {
 			backgroundImage: {
 				"text-svg": "url('/text-vector.png')",
 				"hero-bg": "url(kite_right.png)",
+				"error-bg": "url(/errorPage.jpg)",
+			},
+			height: {
+				"error-height": "calc(100vh - 78px)",
 			},
 		},
 	},

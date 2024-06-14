@@ -3,6 +3,7 @@ import AppLayout from "./UI/AppLayout";
 import Courses from "./Pages/Course/Courses";
 import LandingPage from "./Pages/Home/LandingPage";
 import CourseDetail from "./Pages/Course/CourseDetail";
+import ErrorPage from "./Pages/ErrorPage";
 
 export default function App() {
 	return (
@@ -13,6 +14,7 @@ export default function App() {
 					<Route path='courses' element={<Courses />}>
 						<Route path='course/:id' element={<CourseDetail />} />
 					</Route>
+					<Route path='*' element={<ErrorPage />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
