@@ -301,7 +301,7 @@ function LandingPage() {
 			</section>
 
 			<section className='bg-white mx-auto px-4 pt-12'>
-				<div className='w-full flex flex-col sm:flex-row md:w-5/6 text-center'>
+				<div className='w-full mx-auto flex flex-col sm:flex-row md:w-5/6 text-center'>
 					<img
 						src='/about_img.png'
 						alt='Boy and girl reading'
@@ -321,11 +321,11 @@ function LandingPage() {
 						<div className='flex gap-4'>
 							<div className='flex items-center gap-4'>
 								<div>
-									<PresentationChartLineIcon
-										className='rounded-full p-6 bg-red-500'
-										width={20}
-										color='white'
-									/>
+									<p className='text-xl bg-red-500'>
+										{" "}
+										{/* Continue here */}
+										<PresentationChartLineIcon color='white' />
+									</p>
 								</div>
 							</div>
 						</div>
