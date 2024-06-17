@@ -66,8 +66,11 @@ const courses = [
 function CourseCard({ course }) {
 	return (
 		<>
-			<div className='mx-auto w-4/5 md:max-w-72 rounded-lg bg-white overflow-hidden border-2 border-solid'>
-				<div className='px-6 py-4 flex items-center rounded-lg overflow-hidden'>
+			<div
+				className='
+			mx-auto md:max-w-72 flex items-center md:items-start flex-row md:flex-col rounded-lg bg-white overflow-hidden border-2 border-solid
+			'>
+				<div className='px-6 py-4 w-full hidden md:block rounded-lg overflow-hidden'>
 					<img
 						src={course.imgUrl}
 						className='w-full object-cover'
@@ -75,7 +78,7 @@ function CourseCard({ course }) {
 					/>
 				</div>
 
-				<div className='flex items-center px-6 justify-between'>
+				<div className='md:flex items-start hidden md-center md:flex-row flex-col px-6 justify-between'>
 					<Tag text={course.tag} />
 					<div className='flex items-center gap-2'>
 						{course.prevPrice > 0 && (
@@ -89,8 +92,8 @@ function CourseCard({ course }) {
 					</div>
 				</div>
 
-				<div className='px-6 py-4'>
-					<h3 className='font-semibold leading-tight capitalize text-lg mb-2 text-[#161439]'>
+				<div className='px-6 py-4 min-w-fit'>
+					<h3 className='font-semibold leading-tight w-[20ch] capitalize text-sm mb-2 text-[#161439]'>
 						{course?.title}
 					</h3>
 
@@ -142,8 +145,8 @@ function CourseCard({ course }) {
 
 function CourseView({ courses }) {
 	return (
-		<div>
-			<div className='w-full md:w-5/6 mx-auto px-4 md:p-0 flex flex-wrap flex-row items-center gap-6'>
+		<div className='border border-solid w-5/6 mx-auto'>
+			<div className='w-full mx-auto px-4 md:p-0 flex flex-wrap flex-row items-center gap-6'>
 				{courses.length > 0 ? (
 					courses.map((course) => (
 						<CourseCard course={course} key={course.id} />
@@ -162,7 +165,7 @@ function CourseView({ courses }) {
 function CourseLink({ opens, onclick, text, selectedCourse }) {
 	return (
 		<p
-			className={`text-xs md:text-lg cursor-pointer pb-2 text-gray-500 ${
+			className={`text-xs md:text-sm inline-block min-w-24 cursor-pointer pb-2 text-gray-500 ${
 				opens === selectedCourse
 					? "border-b-4 border-solid border-[#5751E1] text-black"
 					: ""
@@ -190,7 +193,7 @@ function CourseViewer() {
 
 	return (
 		<section>
-			<ul className='flex items-center gap-6 px-4 md:gap-12 w-full md:w-1/2 mb-12 justify-center mx-auto border-[#D9D9F3] border-b-2 border-solid'>
+			<ul className='flex items-center gap-6 px-4 md:gap-12 w-5/6 lg:w-1/2 mb-12 justify-center mx-auto border-[#D9D9F3] border-b-2 border-solid'>
 				<CourseLink
 					opens='allCourses'
 					text='All Courses'
