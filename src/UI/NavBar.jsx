@@ -1,30 +1,7 @@
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
 import NavItem from "./NavItem";
 
-const navLinks = [
-	{
-		path: "/",
-		title: "Home",
-	},
-	{
-		path: "/courses",
-		title: "Courses",
-	},
-	{
-		path: "/pages",
-		title: "Pages",
-	},
-	{
-		path: "/shop",
-		title: "Shop",
-	},
-	{
-		path: "/blog",
-		title: "Blog",
-	},
-];
-
-function NavBar() {
+function NavBar({ navLinks }) {
 	return (
 		<nav className='md:flex items-center hidden'>
 			<ul className='flex space-x-6 items-center'>
