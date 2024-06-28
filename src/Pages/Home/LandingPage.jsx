@@ -18,12 +18,11 @@ function AboutCard({
 }) {
 	return (
 		<div
-			style={{ boxShadow: `5px 5px 0px #${backdropColor}` }}
-			className={`rounded-xl p-4 ${
-				backgroundColor
-					? `bg-[#${backgroundColor}] border border-solid border-[#${backgroundColor}]`
-					: ""
-			} relative p-8`}>
+			style={{
+				boxShadow: `5px 5px 0px #${backdropColor}`,
+				backgroundColor,
+			}}
+			className={`rounded-xl relative p-8`}>
 			<span className='absolute top-4 right-4'>
 				<SparklesIcon
 					width={40}
@@ -32,7 +31,9 @@ function AboutCard({
 				/>
 			</span>
 			<div className='flex gap-2 items-center mb-3'>
-				<span className={`rounded-full p-2 bg-[#${iconColor}]`}>
+				<span
+					className='rounded-full p-2'
+					style={{ background: iconColor }}>
 					{icon}
 				</span>
 				<h3 className='text-lg font-semibold text-[#161439]'>
@@ -47,11 +48,13 @@ function AboutCard({
 export function Tag({
 	text,
 	textColor = "indigo-600",
-	backgroundColor = "indigo-100",
+	backgroundColor = "#EFEEFE",
 }) {
+	const styles = {};
 	return (
 		<span
-			className={`rounded-3xl text-xs py-1 px-2 capitalize font-semibold text-${textColor} bg-${backgroundColor}`}>
+			className='rounded-3xl text-xs py-1 px-2 capitalize font-semibold'
+			style={{ color: textColor, backgroundColor }}>
 			{text}
 		</span>
 	);
@@ -198,27 +201,27 @@ function LandingPage() {
 					</section>
 					<section className='flex flex-col md:flex-row items-center gap-8 w-5/6 mx-auto mt-6'>
 						<AboutCard
-							iconColor='1BCBE3'
-							backgroundColor='F1FDFF'
+							iconColor='#1BCBE3'
+							backgroundColor='#F1FDFF'
 							backdropColor='C9E4E9'
 							title='Expert Tutors'
 							text='When an unknown printer took a gallery offer type and scrambled makes.'
 							icon={<AcademicCapIcon width={30} color='white' />}
 						/>
 						<AboutCard
-							iconColor='5751E1'
+							iconColor='#5751E1'
 							backdropColor='C8C1ED'
-							backgroundColor='f7eef9'
+							backgroundColor='#f7eef9'
 							title='Effective Courses'
 							text='When an unknown printer took a gallery offer type and scrambled makes.'
 							icon={<BookOpenIcon width={30} color='white' />}
 						/>
 						<AboutCard
-							backgroundColor='FFD53F'
+							backgroundColor='#FFF7E2'
+							backdropColor='ebe0c4'
+							iconColor='#FFC224'
 							title='Earn Certificate'
 							text='When an unknown printer took a gallery offer type and scrambled makes.'
-							iconColor='FFC224'
-							backdropColor='ebe0c4'
 							icon={<img src='/cert_svg.svg' width={30} />}
 						/>
 					</section>
