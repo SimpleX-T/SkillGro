@@ -304,7 +304,7 @@ function LandingPage() {
 			</section>
 
 			<section className='bg-white mx-auto px-4 pt-12 relative'>
-				<div className='w-full mx-auto flex flex-col justify-between sm:flex-row md:w-5/6'>
+				<div className='w-full mx-auto flex mb-16 flex-col justify-between sm:flex-row md:w-5/6'>
 					<img
 						src='/about_img.png'
 						alt='Boy and girl reading'
@@ -359,7 +359,35 @@ function LandingPage() {
 								</p>
 							</div>
 						</div>
+						<Button>get started</Button>
 					</div>
+				</div>
+
+				<div className='bg-[#282568] rounded-xl text-white pl-16 pt-4  mb-12 w-5/6 mx-auto flex items-center gap-6'>
+					<h2 className='capitalize text-4xl w-5/12 font-semibold'>
+						Thousands of
+						<span className='bg-text-svg'> courses </span>
+						authored by industry experts
+					</h2>
+					<div className='flex mr-auto gap-8'>
+						<div className='border-r-2 pr-8 border-solid gradient-border'>
+							<h2 className='text-4xl font-semibold'>44k+</h2>
+							<p className='capitalize font-normal text-sm'>
+								active students
+							</p>
+						</div>
+						<div>
+							<h2 className='text-4xl font-semibold'>328+</h2>
+							<p className='capitalize font-normal text-sm'>
+								best instructors
+							</p>
+						</div>
+					</div>
+					<img
+						src='industry_img.png'
+						width={300}
+						alt='man and woman'
+					/>
 				</div>
 			</section>
 		</>

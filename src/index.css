@@ -69,3 +69,8 @@ body {
 		transform: translateX(-100%);
 	}
 }
+
+.gradient-border {
+	border-image-slice: 1;
+	border-image-source: linear-gradient(#ffffff, #ffffff70 35%, #ffffff15 80%);
+}
