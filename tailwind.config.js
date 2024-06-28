@@ -15,6 +15,9 @@ export default {
 			height: {
 				"error-height": "calc(100vh - 78px)",
 			},
+			boxShadow: {
+				btr: "5px 5px 0px rgba(0, 0, 0, 0.25)",
+			},
 		},
 	},
 	plugins: [],

@@ -303,33 +303,60 @@ function LandingPage() {
 				</div>
 			</section>
 
-			<section className='bg-white mx-auto px-4 pt-12'>
-				<div className='w-full mx-auto flex flex-col sm:flex-row md:w-5/6 text-center'>
+			<section className='bg-white mx-auto px-4 pt-12 relative'>
+				<div className='w-full mx-auto flex flex-col justify-between sm:flex-row md:w-5/6'>
 					<img
 						src='/about_img.png'
 						alt='Boy and girl reading'
-						className='hidden sm:block'
+						className='hidden sm:block w-[550px]'
 					/>
-					<div>
+					<div className='w-1/2 my-auto'>
 						<Tag text='Free Workshop' />
-						<h2 className='text-[#161439] text-2xl font-bold my-3'>
+						<h2 className='text-[#161439] text-2xl font-bold my-4'>
 							Join Our Free Workshops
 						</h2>
-						<p className='text-xs text-[#6D6C80] md:w-[60ch] text-center'>
+						<p className='text-sm text-[#6D6C80] text-left w-1/2 mb-5'>
 							An unknown printer took a gallery of type and
 							scrambled it to make a type specimen books survived
-							not only five centuries. An unknown printer took a
-							gallery of type and scrambled.
+							not only five centuries.
 						</p>
-						<div className='flex gap-4'>
-							<div className='flex items-center gap-4'>
-								<div>
-									<p className='text-xl bg-red-500'>
-										{" "}
-										{/* Continue here */}
-										<PresentationChartLineIcon color='white' />
-									</p>
+						<div className='flex gap-4 w-2/3 mb-4'>
+							<div>
+								<div className='flex items-center gap-4 mb-2'>
+									<span className='text-xl rounded-full flex items-center justify-center bg-red-500 border border-solid border-red-700 p-2 shadow-btr'>
+										<PresentationChartLineIcon
+											width={30}
+											color='white'
+										/>
+									</span>
+
+									<h3 className='capitalize font-semibold text-md'>
+										smooth virtual live classes
+									</h3>
 								</div>
+								<p className='text-sm leading-6 text-gray-600'>
+									Lorem, ipsum dolor sit amet consectetur
+									adipisicing elit.
+								</p>
+							</div>
+
+							<div>
+								<div className='flex items-center gap-4 mb-2'>
+									<span className='text-xl rounded-full flex items-center justify-center bg-[#1BCBE3] border border-solid border-cyan-600 p-2 shadow-btr'>
+										<AcademicCapIcon
+											width={30}
+											color='white'
+										/>
+									</span>
+
+									<h3 className='capitalize font-semibold text-md'>
+										99% graduation complete
+									</h3>
+								</div>
+								<p className='text-sm leading-6 text-gray-600'>
+									Lorem, ipsum dolor sit amet consectetur
+									adipisicing elit.
+								</p>
 							</div>
 						</div>
 					</div>
