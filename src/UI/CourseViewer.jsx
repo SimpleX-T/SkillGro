@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { convertSecondsToTime, formatCurrency } from "../utils/helpers";
-import { Tag } from "../Pages/Home/LandingPage";
+import Tag from "./Tag";
 import { StarIcon } from "@heroicons/react/16/solid";
 import { AcademicCapIcon, ClockIcon } from "@heroicons/react/24/outline";
 

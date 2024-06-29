@@ -3,6 +3,9 @@ export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
+			colors: {
+				primary: "#282568",
+			},
 			dropShadow: {
 				custom: "5px 5px 0px #161439",
 				hover: "5px 5px 0px #FFC224",
