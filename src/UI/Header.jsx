@@ -36,14 +36,6 @@ function Header() {
 		setIsOpen((open) => !open);
 	}
 
-	useEffect(function () {
-		window.onscroll = () => setIsOpen(false);
-		// window.onclick = (e) => {
-		// 	if (e.target !== document.getElementById("mobile-nav") && isOpen)
-		// 		setIsOpen(false);
-		// };
-	}, []);
-
 	return (
 		<header className='bg-[rgba(255,255,255,0.6)] backdrop-blur-sm px-3 py-2 sticky top-0 z-50'>
 			<div className='w-full px-2 md:p-0 lg:w-5/6 container mx-auto flex relative items-center justify-between'>
@@ -56,13 +48,18 @@ function Header() {
 						<Link
 							className='w-full text-center p-2 hover:bg-blue-50 '
 							onClick={() => setIsOpen(false)}
-							to={link.path}>
+							to={link.path}
+							key={link.title}>
 							{link.title}
 						</Link>
 					))}
 				</nav>
-				<Logo />
-				<NavBar navLinks={navLinks} />
+
+				<Link to='/'>
+					<Logo type='main' />
+				</Link>
+
+				{/* <NavBar navLinks={navLinks} /> */}
 				<HeaderForm />
 				<CartIcon />
 

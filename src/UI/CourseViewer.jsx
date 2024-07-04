@@ -193,7 +193,7 @@ function CourseViewer() {
 
 	return (
 		<section>
-			<ul className='flex items-center gap-6 px-4 md:gap-12 w-5/6 lg:w-1/2 mb-12 justify-center mx-auto border-[#D9D9F3] border-b-2 border-solid'>
+			<ul className='flex items-center sm:gap-6 px-4 md:gap-12 w-5/6 lg:w-1/2 mb-12 justify-center mx-auto border-[#D9D9F3] border-b-2 border-solid'>
 				<CourseLink
 					opens='allCourses'
 					text='All Courses'

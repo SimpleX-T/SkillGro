@@ -6,16 +6,12 @@ function NavBar({ navLinks }) {
 		<nav className='md:flex items-center hidden'>
 			<ul className='flex space-x-6 items-center'>
 				{navLinks.map((link) => (
-					<NavItem title={link.title} to={link.path} />
+					<NavItem
+						title={link.title}
+						to={link.path}
+						key={link.title}
+					/>
 				))}
-				{/* <NavItem title='home' />
-				<NavItem
-					title='courses'
-					icon={<ChevronDownIcon width={20} />}
-				/>
-				<NavItem title='pages' icon={<ChevronDownIcon width={20} />} />
-				<NavItem title='shop' icon={<ChevronDownIcon width={20} />} />
-				<NavItem title='blog' /> */}
 			</ul>
 		</nav>
 	);
