@@ -5,6 +5,7 @@ export default {
 		extend: {
 			colors: {
 				primary: "#282568",
+				dark: "#06042E",
 			},
 			dropShadow: {
 				custom: "5px 5px 0px #161439",

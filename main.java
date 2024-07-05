@@ -9,8 +9,12 @@ class main {
 
     System.out.print("Input an integer: ");
     num1 = input.nextInt();
+
+    int sum = 0;
    for (int i = 1; i <= num1; i++) {
-    System.out.println("Hello " + i);
+    sum += i;
+    System.out.println("Hello " + sum);
+
    }
   }
 }
