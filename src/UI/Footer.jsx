@@ -76,22 +76,24 @@
 
 // export default Footer;
 
-import React from "react";
+import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import { BiLogoPlayStore } from "react-icons/bi";
+import { FaApple } from "react-icons/fa6";
 
 const Footer = () => {
 	return (
-		<footer className='bg-dark text-white py-12'>
-			<div className='container mx-auto px-4'>
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-					{/* Company Info */}
+		<footer className='bg-dark text-text pt-12 pb-4'>
+			<div className='container mx-auto w-5/6 px-4'>
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20'>
 					<div>
-						<div className='flex items-center mb-4'>
-							<div className='w-8 h-8 bg-purple-600 rounded-full mr-2'></div>
-							<span className='text-xl font-bold'>SkillGro</span>
+						<div className='flex items-center mb-8'>
+							<Link to='/'>
+								<Logo type='footer' />
+							</Link>
 						</div>
-						<p className='text-sm mb-4'>
+						<p className='text-sm mb-4 leading-normal font-light'>
 							when an unknown printer took galley of type and
 							scrambled it to make pspecimen bookt has.
 						</p>
@@ -101,60 +103,57 @@ const Footer = () => {
 						<p className='text-sm'>+123 88 9900 456</p>
 					</div>
 
-					{/* Useful Links */}
 					<div>
-						<h3 className='text-lg font-semibold mb-4'>
+						<h3 className='text-lg after:content-[""] after:absolute after:-bottom-2 after:w-8 after:h-[3px] after:rounded-full after:left-0 after:bg-[#5751E1] relative mb-4 text-white'>
 							Useful Links
 						</h3>
-						<ul className='space-y-2'>
-							<li>
+						<ul className='space-y-2 text-[14px]'>
+							<li className='py-1'>
 								<Link to='/'>Our values</Link>
 							</li>
-							<li>
+							<li className='py-1'>
 								<Link to='/'>Our advisory board</Link>
 							</li>
-							<li>
+							<li className='py-1'>
 								<Link to='/'>Our partners</Link>
 							</li>
-							<li>
+							<li className='py-1'>
 								<Link to='/'>Become a partner</Link>
 							</li>
-							<li>
+							<li className='py-1'>
 								<Link to='/'>Work at Future Learn</Link>
 							</li>
-							<li>
+							<li className='py-1'>
 								<Link to='/'>Quizlet Plus</Link>
 							</li>
 						</ul>
 					</div>
 
-					{/* Our Company */}
 					<div>
-						<h3 className='text-lg font-semibold mb-4'>
+						<h3 className='text-lg after:content-[""] after:absolute after:-bottom-2 after:w-8 after:h-[3px] after:rounded-full after:left-0 after:bg-[#5751E1] relative mb-4 text-white'>
 							Our Company
 						</h3>
-						<ul className='space-y-2'>
-							<li>
+						<ul className='space-y-2 text-[14px]'>
+							<li className='py-1'>
 								<Link to='/contact'>Contact Us</Link>
 							</li>
-							<li>
+							<li className='py-1'>
 								<Link to='/become-teacher'>Become Teacher</Link>
 							</li>
-							<li>
+							<li className='py-1'>
 								<Link to='/blog'>Blog</Link>
 							</li>
-							<li>
+							<li className='py-1'>
 								<Link to='/instructor'>Instructor</Link>
 							</li>
-							<li>
+							<li className='py-1'>
 								<Link to='/events'>Events</Link>
 							</li>
 						</ul>
 					</div>
 
-					{/* Get In Touch */}
-					<div>
-						<h3 className='text-lg font-semibold mb-4'>
+					<div className='w-[300px]'>
+						<h3 className='text-lg after:content-[""] after:absolute after:-bottom-2 after:w-8 after:h-[3px] after:rounded-full after:left-0 after:bg-[#5751E1] relative mb-4 text-white'>
 							Get In Touch
 						</h3>
 						<p className='text-sm mb-4'>
@@ -162,36 +161,54 @@ const Footer = () => {
 							scrambled
 						</p>
 						<div className='flex space-x-4 mb-4'>
-							<Link to='#'>
+							<Link
+								to='#'
+								className='text-xl hover:text-white transition-colors duration-200'>
 								<FaFacebookF />
 							</Link>
-							<Link to='#'>
+							<Link
+								to='#'
+								className='text-xl hover:text-white transition-colors duration-200'>
 								<FaTwitter />
 							</Link>
-							<Link to='#'>
+							<Link
+								to='#'
+								className='text-xl hover:text-white transition-colors duration-200'>
 								<FaInstagram />
 							</Link>
-							<Link to='#'>
+							<Link
+								to='#'
+								className='text-xl hover:text-white transition-colors duration-200'>
 								<FaYoutube />
 							</Link>
 						</div>
-						<div className='flex space-x-2'>
+						<div className='flex items-center gap-2'>
 							<Link
 								to='#'
-								className='bg-[#2A2A3A] text-white px-3 py-2 rounded-md text-xs'>
-								Get It On Google Play
+								className='bg-[#2A2A3A] text-white p-1 rounded-md text-xs flex items-center w-1/2'>
+								<span className='text-4xl'>
+									<BiLogoPlayStore />
+								</span>
+								<div className='flex flex-col items-start'>
+									<span className='text-x'>Get It On</span>
+
+									<span>Google Play</span>
+								</div>
 							</Link>
 							<Link
 								to='#'
-								className='bg-[#2A2A3A] text-white px-3 py-2 rounded-md text-xs'>
+								className='bg-[#2A2A3A] text-white p-1 rounded-md text-xs flex items-center'>
+								<span className='text-4xl'>
+									<FaApple />
+								</span>
 								Download On The App Store
 							</Link>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className='border-t border-gray-700 mt-8 pt-8 text-center text-sm'>
-				<p>© 2010-2024 skillgro.com. All rights reserved.</p>
+			<div className='border-t border-gray-700 mt-8 pt-4 text-center text-sm'>
+				<p>&copy; 2024 skillGro.com. All rights reserved.</p>
 				<div className='mt-2'>
 					<Link to='/terms' className='mr-4'>
 						Term of Use

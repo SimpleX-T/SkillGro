@@ -6,6 +6,7 @@ export default {
 			colors: {
 				primary: "#282568",
 				dark: "#06042E",
+				text: "#B2BBCC",
 			},
 			dropShadow: {
 				custom: "5px 5px 0px #161439",
