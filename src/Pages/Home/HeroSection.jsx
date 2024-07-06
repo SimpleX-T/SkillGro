@@ -3,7 +3,9 @@ import Button from "../../UI/Button";
 
 function HeroSection() {
 	return (
-		<section className='flex flex-col md:flex-row items-center relative justify-between md:w-5/6 w-full px-4 md:p-0 mx-auto bg-fixed gap-10 bg-hero-bg bg-no-repeat bg-left my-12'>
+		<section
+			id='hero'
+			className='flex flex-col md:flex-row items-center relative justify-between md:w-5/6 w-full px-4 md:p-0 mx-auto bg-fixed gap-10 bg-hero-bg bg-no-repeat bg-left my-12'>
 			<div className='w-full p-1 md:w-1/2 md:p-4'>
 				<h3 className='text-xl md:text-4xl font-semibold text-[#161439] select-none'>
 					Learning is
