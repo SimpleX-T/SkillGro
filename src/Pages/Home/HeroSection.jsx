@@ -1,5 +1,6 @@
 import { ArrowRightIcon, PlayIcon } from "@heroicons/react/16/solid";
 import Button from "../../UI/Button";
+import { Link } from "react-router-dom";
 
 function HeroSection() {
 	return (
@@ -16,13 +17,15 @@ function HeroSection() {
 					Make of it. Make it Yours at SkillGro.
 				</h3>
 				<div className='flex items-center h-8 mt-8 gap-12'>
-					<Button>
-						<span>Start Free Trial</span>
-						<ArrowRightIcon width={20} />
-					</Button>
-					<button className='rounded-full flex items-center justify-center border border-[#161439] p-2 md:p-[14px] bg-[#FFC224] text-[#161439] font-bold drop-shadow-custom active:drop-shadow-none active:text-[#f7eef9]'>
+					<Link to='login'>
+						<Button>
+							<span>Start Free Trial</span>
+							<ArrowRightIcon width={20} />
+						</Button>
+					</Link>
+					{/* <button className='rounded-full flex items-center justify-center border border-[#161439] p-2 md:p-[14px] bg-[#FFC224] text-[#161439] font-bold drop-shadow-custom active:drop-shadow-none active:text-[#f7eef9]'>
 						<PlayIcon width={20} />
-					</button>
+					</button> */}
 				</div>
 			</div>
 			<div className='w-1/2'>
