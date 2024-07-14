@@ -21,7 +21,7 @@ function LandingPage() {
 	return (
 		<>
 			<HeroSection />
-			<section className='slanted-bg relative bg-white mx-auto'>
+			<section className='slanted-bg relative bg-white mx-auto w-full overflow-x-clip'>
 				<BrandCarousel />
 				<FeaturesSection />
 				<AboutUsSection />

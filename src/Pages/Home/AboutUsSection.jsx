@@ -1,12 +1,16 @@
 import { ArrowRightIcon } from "@heroicons/react/16/solid";
 import Button from "../../UI/Button";
 import Tag from "../../UI/Tag";
+import { motion, useScro } from "framer-motion";
 
 function AboutUsSection() {
 	return (
 		<section className='flex flex-col py-6 md:flex-row items-center gap-4 mt-12 px-4 md:p-0 w-full sm:w-5/6 mx-auto'>
 			<div className='w-1/2 hidden md:block'>
-				<img
+				<motion.img
+					initial={{ x: -100, opacity: 0 }}
+					transition={{ duration: 1 }}
+					animate={{ x: 0, opacity: 1 }}
 					width={400}
 					src='/heroImg_2.png'
 					alt='Man Smiling with books in hand'
@@ -32,15 +36,27 @@ function AboutUsSection() {
 
 				<ul className='mb-8'>
 					<li className='capitalize text-[#161439] text-[18px] font-semibold flex items-center gap-2 my-2'>
-						<img src='/bulletType.png' alt='Bullet' width={25} />
+						<img
+							src='/bulletType.png'
+							alt='Bullet'
+							width={25}
+						/>
 						the most world class instructors
 					</li>
 					<li className='capitalize text-[#161439] text-[18px] font-semibold flex items-center gap-2 my-2'>
-						<img src='/bulletType.png' alt='Bullet' width={25} />
+						<img
+							src='/bulletType.png'
+							alt='Bullet'
+							width={25}
+						/>
 						access your class anywhere
 					</li>
 					<li className='capitalize text-[#161439] text-[18px] font-semibold flex items-center gap-2 my-2'>
-						<img src='/bulletType.png' alt='Bullet' width={25} />
+						<img
+							src='/bulletType.png'
+							alt='Bullet'
+							width={25}
+						/>
 						flexible course plan
 					</li>
 				</ul>

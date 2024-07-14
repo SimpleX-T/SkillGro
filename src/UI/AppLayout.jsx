@@ -34,13 +34,15 @@ function AppLayout() {
 	return (
 		<div className='flex flex-col h-screen'>
 			<Header />
-			<main ref={mainRef} className='flex-1 overflow-y-auto bg-[#f7eef9]'>
+			<main
+				ref={mainRef}
+				className='flex-1 overflow-y-auto bg-[#f7eef9]'>
 				<Outlet />
 				{isScrolled && (
 					<button
 						title='Scroll to top'
 						onClick={scrollToTop}
-						className='fixed bottom-32 right-12 z-[99] rounded-lg p-2 bg-[#06042E] transition-colors duration-200 border-none'>
+						className='fixed bottom-32 right-4 sm:right-12 z-[99] rounded-lg p-2 bg-[#06042E65] sm:bg-[#06042E] hover:bg-[#06042E] transition-colors duration-200 border-none'>
 						<FaArrowUp color='white' />
 					</button>
 				)}
