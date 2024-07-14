@@ -1,4 +1,6 @@
 import { SparklesIcon } from "@heroicons/react/16/solid";
+import { motion, stagger, useInView } from "framer-motion";
+import { useRef } from "react";
 
 function AboutCard({
 	text,
@@ -7,9 +9,28 @@ function AboutCard({
 	backgroundColor,
 	backdropColor,
 	iconColor,
+	index,
 }) {
+	const cardRef = useRef(null);
+	const isInView = useInView(cardRef, { once: true });
+	const cardVariants = {
+		hidden: { opacity: 0, y: -50 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.3,
+				delay: 0.1 * index,
+				ease: "easeIn",
+			},
+		},
+	};
 	return (
-		<div
+		<motion.div
+			ref={cardRef}
+			variants={cardVariants}
+			initial='hidden'
+			animate={isInView ? "visible" : "hidden"}
 			style={{
 				boxShadow: `5px 5px 0px #${backdropColor}`,
 				backgroundColor,
@@ -33,7 +54,7 @@ function AboutCard({
 				</h3>
 			</div>
 			<p className='capitalize text-[13px] font-light'>{text}</p>
-		</div>
+		</motion.div>
 	);
 }
 export default AboutCard;
